@@ -124,9 +124,11 @@ end
 def play(board)
   counter = 0
 
-  while counter < 9
+  until over?(board)
     turn(board)
+  end
 
-    counter += 1
+  if won?(board)
+    puts "Congratulations #{winner(board)}"
   end
 end
